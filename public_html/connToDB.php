@@ -1,0 +1,74 @@
+<?php
+
+//session_start();
+
+global $conn;
+
+function doDB()
+
+{
+
+  //old db conection
+
+  /*
+  $conn = mysql_connect("p41mysql31.secureserver.net", "gamesThatTeach", "Snickers1") or die(mysql_error());
+$hostname = "ECGames.db.13551674.hostedresource.com";
+$username = "ECGames";
+$dbname = "ECGames";
+ mysql_select_db("gamesThatTeach") or die(mysql_error()); 
+*/	$dbhost = 'localhost';
+	$dbuser = 'ECGames';
+	$dbpass = 'ECGames2017!';
+	$db = 'ECGames';
+	 /* 17 Jan 2017 hi3
+	$dbhost = 'localhost';
+	$dbuser = 'idar1227_Student';
+	$dbpass = '941651';
+	$db = 'idar1227_soegtt';
+	*/
+	/**********************************************************************
+	Host name = (use the server IP address)
+	Database name = (cpanelUsername_databaseName)
+	Database username = (cpanelUsername_databaseUsername)
+	Database password = (the password you entered for that database user)
+	MySQL Connection Port = 3306
+	TCP or UDP, either is fine.
+	***********************************************************************/
+	
+	
+	//create connection
+	//mysqli_connect(host,username,password,dbname);
+	$conn = new mysqli($dbhost,$dbuser,$dbpass, $db); 
+
+	// Check connection
+	if ($conn->connect_error) {
+		echo "Database failed to connect to: <span style='color:red;'>" . $dbhost . "</span>. " . $conn->connect_error, E_USER_ERROR . "<br>";
+	} else {
+		//used to display database is connected
+		//echo "<br> You are connected to database: <span style='color:red;'>". $db . "</span> on Host name: <span style='color:red;'>" . $dbhost . "</span>!<br><hr>";
+		}
+
+  //new upgraded db mysql v5.0   09/26/08
+	// $mysqli = new mysqli('localhost', 'my_user', 'my_password', 'my_db');
+	//$conn = mysqli_connect("p50mysql257.secureserver.net", "SOEGTT", "Xhk55gds", "SOEGTT") or die(mysql_error());
+	//$conn = new mysqli('p50mysql257.secureserver.net', 'SOEGTT', 'Xhk55gds', 'SOEGTT') or die(mysql_error());
+
+  //localhost connection
+
+  //$conn = mysql_connect("localhost", "root", "") or die(mysql_error());
+
+  // mysql_select_db("gtt", $conn) or die(mysql_error());
+
+  return $conn;
+
+}
+
+function closeDB()
+
+{
+
+	mysqli_close($conn);
+
+}
+
+?>
