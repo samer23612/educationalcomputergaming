@@ -1,0 +1,44 @@
+
+/* colors dont really know exact names, listed by shades of brown
+ colors used for sandbox used from http://www.colorhunter.com/tag/sandbox/1 
+ #7F4E19 brown  
+ #B5803B lighter brown 
+ #CD9952 even lighter brown 
+ #CCAB77 even more lighter brown 
+ #E7B66E lightest brown 
+ #4B4B4B dark grey
+ #FFFFB1 bage color 
+ #CDDEEB light #B163A3 */
+
+body {
+    background-color:#FFF; /* White */
+}
+
+#container, {
+    background-color:#FBFAFD;/* light grey */
+	color:#000000;
+}
+
+#content,  footer {
+	background-color: #FBFAFD;
+	}
+	
+
+
+h1, a {
+    color:#036; 
+}
+h2{color:black;}
+h3, h4, h5, h6 { color: #036 }
+
+a { 
+	background-color: none;
+}
+
+a:hover {
+	color:#7e9abf;    
+	}
+	
+a:active {
+	color:#CDDEEB; /* #CDDEEB light #B163A3 */
+	}
